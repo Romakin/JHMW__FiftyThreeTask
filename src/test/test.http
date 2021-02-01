@@ -1,0 +1,5 @@
+# First task
+
+GET http://localhost:8898/products/fetch-product?name=Michael
+Accept: application/json
+###
