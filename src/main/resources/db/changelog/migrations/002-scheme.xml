@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog">
+    <changeSet id="002" author="user">
+        <createTable tableName="CUSTOMERS">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"></constraints>
+            </column>
+            <column name="name" type="varchar(255)" defaultValue="">
+            </column>
+            <column name="surname" type="varchar(255)" defaultValue=""></column>
+            <column name="age" defaultValueNumeric="18" type="int"></column>
+            <column name="phone_number" type="varchar(255)">
+                <constraints nullable="true"></constraints>
+            </column>
+        </createTable>
+        <createTable tableName="CUSTOMERS">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"></constraints>
+            </column>
+            <column name="date" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP">
+            </column>
+            <column name="product_name" type="varchar(255)" defaultValue=""></column>
+            <column name="amount" defaultValueNumeric="0" type="int"></column>
+            <column name="customer_id" type="varchar(255)"></column>
+        </createTable>
+        <insert tableName="CUSTOMERS">
+            <column name="name">Varvara</column>
+            <column name="surname">Businkova</column>
+            <column name="age">26</column>
+            <column name="phone_number">89695521122</column>
+        </insert>
+        <insert tableName="CUSTOMERS">
+            <column name="name">Maria</column>
+            <column name="surname">Bostovich</column>
+            <column name="age">29</column>
+            <column name="phone_number">88885552233</column>
+        </insert>
+        <insert tableName="CUSTOMERS">
+            <column name="name">Alexey</column>
+            <column name="surname">Bostovich</column>
+            <column name="age">32</column>
+            <column name="phone_number">88621752233</column>
+        </insert>
+        <insert tableName="CUSTOMERS">
+            <column name="name">Michael</column>
+            <column name="surname">Kornov</column>
+            <column name="age">35</column>
+            <column name="phone_number">85657832545</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

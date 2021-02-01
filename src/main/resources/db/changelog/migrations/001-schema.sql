@@ -1,22 +1,18 @@
 CREATE TABLE IF NOT EXISTS CUSTOMERS (
-    id int auto_increment,
+    id int auto_increment PRIMARY KEY,
     name varchar(255) DEFAULT '' NOT NULL,
     surname varchar(255) DEFAULT '' NOT NULL,
     age int DEFAULT 18 NOT NULL,
-    phone_number varchar(255) DEFAULT NULL,
-    PRIMARY KEY(id)
-    );
+    phone_number varchar(255) DEFAULT '' NULL
+);
 
 CREATE TABLE IF NOT EXISTS ORDERS (
-    id int auto_increment,
+    id int auto_increment PRIMARY KEY,
     date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     product_name varchar(255) DEFAULT '' NOT NULL,
     customer_id int,
-    amount int DEFAULT 0,
-    PRIMARY KEY(id)
-    );
-
-# ALTER TABLE ORDERS ADD CONSTRAINT c_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(id);
+    amount int DEFAULT 0
+);
 
 INSERT INTO CUSTOMERS(
     name,
